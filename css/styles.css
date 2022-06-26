@@ -1,0 +1,41 @@
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: hidden;
+}
+/* .container {
+  display: flex;
+  background-color: tomato;
+} */
+.weather {
+  background-color: blue;
+}
+.title {
+  background-color: aqua;
+}
+.is-hidden {
+  display: none;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 4000ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 4000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
