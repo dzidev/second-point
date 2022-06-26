@@ -72,6 +72,7 @@ const render = () => {
   } else {
     refs.main.classList.add("is-hidden");
     refs.login.classList.remove("is-hidden");
+    refs.form.elements.pass.value = '';
   }
 };
 
