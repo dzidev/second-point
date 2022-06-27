@@ -24,8 +24,13 @@ refs.form.addEventListener("submit", (e) => {
   e.preventDefault();
   const pass = e.currentTarget.elements.pass.value;
   if (!store) {
-    store = decrypt(DEFAULT_STORE, pass);
-    storage.save(STORAGE_KEY, store);
+    try {
+      store = decrypt(DEFAULT_STORE, pass);
+      storage.save(STORAGE_KEY, store);
+    } catch (e) {
+      console.error(e);
+      alert("Try again;)");
+    }
   }
   render();
 });
