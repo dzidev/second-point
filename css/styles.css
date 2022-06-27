@@ -1,3 +1,8 @@
+/* ===== base */
+* {
+  box-sizing: border-box;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -21,16 +26,157 @@ html {
   overflow-x: hidden;
   overflow-x: hidden;
 }
-/* .container {
+
+/* =====  */
+/* body {
+  font-family: "Caveat", sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1.33;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
   display: flex;
-  background-color: tomato;
+  flex-direction: column;
+
+   background-image: url("../images/calendar-big.png");
+
+  background-size: auto auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
 } */
-.weather {
-  background-color: blue;
+
+/* ==== */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+
+  font-family: "Caveat", sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1.33;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background: url(../images/cal-485-768.png) no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  /* background-attachment: scroll; */
+  @media screen and (min-width: 768px) {
+    background: url(../images/cal-768-1024.png) no-repeat center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+  @media screen and (min-width: 1280px) {
+    background: url(../images) no-repeat center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+}
+
+/* ===== */
+.container {
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: flex-star; */
+  align-content: flex-start;
+
+  /* background: url(../images/calendar.png) no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw; */
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 730px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1080px;
+  }
 }
 .title {
-  background-color: aqua;
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+
+  flex-direction: column;
+  /* justify-content: center; */
+
+  /* align-content: flex-start; */
 }
+.title__site {
+  margin: 30px auto 0px auto;
+  font-weight: 700;
+  font-size: 35px;
+}
+.title__data {
+  margin: 10px auto 0px auto;
+}
+.person-duty {
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+
+  flex-direction: column;
+  justify-content: center;
+}
+.person-duty-title {
+  margin: 10px auto 0px auto;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.person-phone {
+  /* position: fixed; */
+  width: 100px;
+  height: 100px;
+  bottom: 50%;
+  left: 55%;
+  /* background: rgba(35, 22, 22, 0.5); */
+  border-radius: 50%;
+  /* z-index: 1000; */
+}
+
+#logout {
+  display: block;
+  width: 60px;
+  min-width: 60px;
+  margin-left: 12px;
+  height: 30px;
+  /* background-color: blueviolet; */
+}
+
 .is-hidden {
   display: none;
   pointer-events: none;

@@ -15,7 +15,8 @@ const refs = {
 // console.log(refs);
 
 const STORAGE_KEY = "second-point";
-const DEFAULT_STORE = "F8kkqPzhNHhHo68onzcRaKDMsVVrnnRFENsd/81JczYEnEaXK2de8D+gZRTEWZxNIVCAP84JMTqLpVL83rNE8jVCzlYmhTNfRSmZgnzGvMzXg+od2xpzCqe75C/kblTAiQpkJ7gNi+B2XTcxs8BDK3Fq5q4q2sQQEjoIsDaUYRa69r+UHG8bpzCjYYffL4NA70X03JFHr5rJtjn00RoNK+pSeSgNSFwYnKRQUl8tYPHLpiYCR2hI2GIhgPrG1eTHHnZYJvhHwFStKw+rIXrwdVhJ4WdHLR4NKlTSc3KDb4DD";
+const DEFAULT_STORE =
+  "F2ZFH5cXdwm+e7hqbjS/+GevKxavzyyQmh+ixRN/JS3b6K+dFYhf7Ku1VXkGOSjZcJKx+qgcNH5h5HpI1ck8mmMxrc3hBaGQvEE16we8Avf7tElc3hDoE9J/a4ysYr6GQZwOqdvY3AI+vCC5yFqGG8YoesEg14L8VXqvdly/fJEYOlTHzRBDUiz71CjOeOiwNckxUjCs2n3hc8NxNb2u9n83rE+rqzdfush92OSYSF0tKlTEg76m09ztU3NPjs4wLz+V3IVieKHvUeRUHCoYSMGOuCc6ziBYmOytvR4ea/HriESQ89krEf8=";
 
 let store = storage.load(STORAGE_KEY);
 
@@ -46,16 +47,30 @@ const daysBetweenDates = (firstDate, lastDate) => {
   return Math.ceil(diff / (1000 * 3600 * 24)) - 1;
 };
 
+const pad = (number) => {
+  if (number < 10) {
+    return "0" + number;
+  }
+  return number;
+};
+
+const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
 const getDateString = (date) => {
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-  };
-  return date.toLocaleDateString("uk-UA", options);
+  // const options = {
+  //   weekday: "long",
+  //   year: "numeric",
+  //   month: "long",
+  //   day: "numeric",
+  //   hour: "numeric",
+  //   minute: "numeric",
+  // };
+  // return date.toLocaleDateString("uk-UA", options);
+  //return date.toLocaleDateString("en-US", options);
+
+  return `${DAYS_OF_WEEK[date.getDay()]} ${pad(date.getDate())}.${pad(
+    date.getMonth() + 1
+  )}.${date.getFullYear()} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
 };
 
 const render = () => {
@@ -72,7 +87,7 @@ const render = () => {
   } else {
     refs.main.classList.add("is-hidden");
     refs.login.classList.remove("is-hidden");
-    refs.form.elements.pass.value = '';
+    refs.form.elements.pass.value = "";
   }
 };
 
