@@ -24,8 +24,13 @@ refs.form.addEventListener("submit", (e) => {
   e.preventDefault();
   const pass = e.currentTarget.elements.pass.value;
   if (!store) {
-    store = decrypt(DEFAULT_STORE, pass);
-    storage.save(STORAGE_KEY, store);
+    try {
+      store = decrypt(DEFAULT_STORE, pass);
+      storage.save(STORAGE_KEY, store);
+    } catch (e) {
+      console.error(e);
+      alert("Try again;)");
+    }
   }
   render();
 });
@@ -47,16 +52,30 @@ const daysBetweenDates = (firstDate, lastDate) => {
   return Math.ceil(diff / (1000 * 3600 * 24)) - 1;
 };
 
+const pad = (number) => {
+  if (number < 10) {
+    return "0" + number;
+  }
+  return number;
+};
+
+const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
 const getDateString = (date) => {
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-  };
-  return date.toLocaleDateString("uk-UA", options);
+  // const options = {
+  //   weekday: "long",
+  //   year: "numeric",
+  //   month: "long",
+  //   day: "numeric",
+  //   hour: "numeric",
+  //   minute: "numeric",
+  // };
+  // return date.toLocaleDateString("uk-UA", options);
+  //return date.toLocaleDateString("en-US", options);
+
+  return `${DAYS_OF_WEEK[date.getDay()]} ${pad(date.getDate())}.${pad(
+    date.getMonth() + 1
+  )}.${date.getFullYear()} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
 };
 
 const render = () => {
