@@ -27,26 +27,6 @@ html {
   overflow-x: hidden;
 }
 
-/* =====  */
-/* body {
-  font-family: "Caveat", sans-serif;
-  font-style: normal;
-  font-size: 12px;
-  line-height: 1.33;
-  width: 100%;
-  max-width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-   background-image: url("../images/calendar-big.png");
-
-  background-size: auto auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-} */
-
 /* ==== */
 *,
 *:before,
@@ -61,6 +41,11 @@ html {
 body {
   display: flex;
 
+  /* width: 100%; */
+  max-width: 95%;
+  overflow-x: hidden;
+  overflow-x: hidden;
+
   font-family: "Caveat", sans-serif;
   font-style: normal;
   font-size: 12px;
@@ -68,24 +53,28 @@ body {
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 
-  background: url(../images/cal-485-768.png) no-repeat center;
+  flex-direction: column;
+  align-items: stretch;
+
+  background: url(../images/calendarmobile.png) no-repeat center;
   -webkit-background-size: cover;
   background-size: cover;
   min-height: 100vh;
   min-width: 100vw;
-  /* background-attachment: scroll; */
+
   @media screen and (min-width: 768px) {
-    background: url(../images/cal-768-1024.png) no-repeat center;
+    width: 730px;
+    background: url(../images/calendartablet.png) no-repeat center;
     -webkit-background-size: cover;
     background-size: cover;
     min-height: 100vh;
     min-width: 100vw;
   }
+
   @media screen and (min-width: 1280px) {
-    background: url(../images) no-repeat center;
+    width: 1080px;
+    background: url(../images/calendardesctop.png) no-repeat center;
     -webkit-background-size: cover;
     background-size: cover;
     min-height: 100vh;
@@ -95,6 +84,7 @@ body {
 
 /* ===== */
 .container {
+  max-width: 95%;
   display: flex;
   padding-left: 15px;
   padding-right: 15px;
@@ -102,17 +92,10 @@ body {
 
   flex-direction: column;
   justify-content: center;
-  /* align-items: flex-star; */
   align-content: flex-start;
 
-  /* background: url(../images/calendar.png) no-repeat center;
-  -webkit-background-size: cover;
-  background-size: cover;
-  min-height: 100vh;
-  min-width: 100vw; */
-
   @media screen and (min-width: 480px) {
-    width: 480px;
+    width: 460px;
   }
 
   @media screen and (min-width: 768px) {
@@ -123,58 +106,86 @@ body {
     width: 1080px;
   }
 }
-.title {
+.box {
   display: flex;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
-
-  flex-direction: column;
-  /* justify-content: center; */
-
-  /* align-content: flex-start; */
-}
-.title__site {
-  margin: 30px auto 0px auto;
-  font-weight: 700;
-  font-size: 35px;
-}
-.title__data {
-  margin: 10px auto 0px auto;
-}
-.person-duty {
-  display: flex;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
-
   flex-direction: column;
   justify-content: center;
 }
-.person-duty-title {
+.data {
   margin: 10px auto 0px auto;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 35px;
+  font-weight: 700;
 }
 
-.person-phone {
-  /* position: fixed; */
+.update {
+  margin: 5px auto 0px auto;
   width: 100px;
   height: 100px;
   bottom: 50%;
   left: 55%;
+
+  border-radius: 50%;
+  /* z-index: 1000; */
+  cursor: pointer;
+}
+
+.title {
+  margin: 25px auto 0px auto;
+  font-size: 40px;
+  font-weight: 700;
+
+  flex-direction: column;
+}
+.person-duty-name {
+  margin: 10px auto 0px auto;
+  font-size: 70px;
+  font-weight: 700;
+  flex-direction: column;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(2);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0.8;
+  }
+}
+.phone {
+  /* position: fixed; */
+  width: 125px;
+  height: 125px;
+  /* bottom: 50%;
+  left: 55%; */
   /* background: rgba(35, 22, 22, 0.5); */
   border-radius: 50%;
   /* z-index: 1000; */
+  /* animation: spin 5s linear 0s infinite; */
+  flex-direction: column;
+  margin: 0px auto 0px auto;
+  cursor: pointer;
+  animation: pulse 2.5s linear infinite;
 }
 
 #logout {
-  display: block;
+  /* display: block; */
   width: 60px;
   min-width: 60px;
-  margin-left: 12px;
+  margin: 55px auto 0px auto;
   height: 30px;
-  /* background-color: blueviolet; */
+  cursor: pointer;
 }
 
 .is-hidden {
@@ -182,6 +193,14 @@ body {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 4000ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 4000ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: opacity 4000ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 4000ms cubic-bezier(0.4, 0, 0.2, 1); */
+}
+/* ====== LOGIN */
+#login {
+  display: flex;
+  align-items: flex-end;
+}
+#login > form {
+  margin: auto;
 }
