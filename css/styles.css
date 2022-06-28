@@ -37,10 +37,28 @@ html {
   margin: 0;
   padding: 0;
 }
-
+@media screen and (max-width: 480px) {
+  body {
+    width: 480px;
+    background: url(../images/calendarmobile.png) no-repeat center;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    width: 730px;
+    background: url(../images/calendartablet.png) no-repeat center;
+  }
+}
+@media screen and (max-width: 1024px) {
+   body {
+    width: 980;
+    background: url(../images/calendardesctop.png) no-repeat center;
+   }
+    
+  } 
 body {
   display: flex;
-
+/* background: url(../images/calendarmobile.png) no-repeat center; */
   /* width: 100%; */
   max-width: 95%;
   overflow-x: hidden;
@@ -48,7 +66,6 @@ body {
 
   font-family: "Caveat", sans-serif;
   font-style: normal;
-  font-size: 12px;
   line-height: 1.33;
   width: 100%;
   max-width: 100%;
@@ -57,20 +74,30 @@ body {
   flex-direction: column;
   align-items: stretch;
 
-  background: url(../images/calendarmobile.png) no-repeat center;
-  -webkit-background-size: cover;
-  background-size: cover;
-  min-height: 100vh;
-  min-width: 100vw;
-
-  @media screen and (min-width: 768px) {
-    width: 730px;
-    background: url(../images/calendartablet.png) no-repeat center;
+  @media screen and (min-width: 900px) {
+    /* width: 320px;
+    background: url(../images/calendarmobile.png) no-repeat center;
     -webkit-background-size: cover;
     background-size: cover;
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100vw; */
+    
+      background-color: tomato;
+
+    
+
   }
+  
+  @media screen and (min-width: 768px) {
+    width: 730px;
+    max-width: 95%;
+    /* background: url(../images/calendartablet.png) no-repeat center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw; */
+    background-color: tomato;
+  } 
 
   @media screen and (min-width: 1280px) {
     width: 1080px;
@@ -79,7 +106,7 @@ body {
     background-size: cover;
     min-height: 100vh;
     min-width: 100vw;
-  }
+  } */
 }
 
 /* ===== */
@@ -92,18 +119,21 @@ body {
 
   flex-direction: column;
   justify-content: center;
-  align-content: flex-start;
+  /* align-content: space-between; */
 
   @media screen and (min-width: 480px) {
-    width: 460px;
+    width: 480px;
+    max-width: 95%;
   }
 
   @media screen and (min-width: 768px) {
     width: 730px;
+    max-width: 95%;
   }
 
   @media screen and (min-width: 1280px) {
     width: 1080px;
+    max-width: 95%;
   }
 }
 .box {
@@ -117,24 +147,24 @@ body {
   font-weight: 700;
 }
 
-.update {
-  margin: 5px auto 0px auto;
-  width: 100px;
-  height: 100px;
-  bottom: 50%;
-  left: 55%;
-
-  border-radius: 50%;
-  /* z-index: 1000; */
-  cursor: pointer;
-}
-
 .title {
   margin: 25px auto 0px auto;
   font-size: 40px;
   font-weight: 700;
 
   flex-direction: column;
+   @media screen and (min-width: 480px) {
+    font-size: 50px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 60px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 70px;
+  }
+}
 }
 .person-duty-name {
   margin: 10px auto 0px auto;
@@ -179,12 +209,42 @@ body {
   animation: pulse 2.5s linear infinite;
 }
 
+.update-group {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+  @media screen and (min-width: 480px) {
+    padding-top: 100px;
+  }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 200px;
+  }
+}
+
+.update {
+  margin: auto;
+  width: 125px;
+  height: 125px;
+  /* bottom: 50%; */
+  /* left: 55%; */
+
+  border-radius: 50%;
+  /* z-index: 1000; */
+  cursor: pointer;
+}
 #logout {
   /* display: block; */
-  width: 60px;
-  min-width: 60px;
-  margin: 55px auto 0px auto;
-  height: 30px;
+  margin: auto;
+  width: 90px;
+  height: 90px;
+
+  /* height: 30px; */
   cursor: pointer;
 }
 
