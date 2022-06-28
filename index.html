@@ -17,16 +17,18 @@
   </head>
   <body>
     <div id="main" class="container">
-      <div class="title">
-        <h1 class="title__site">PERSON ON DUTY</h1>
-        <h2 class="title__data">2022-06-26 08:45</h2>
-      </div>
-      <div class="person-duty">
-        <p class="person-duty-title">Name</p>
-        <!-- <img class="person-duty-img" src="" alt="Person on duty picture" /> -->
-        <a href="#" class="person-phone"
-          ><img src="images/phone.png" alt="phone"
+      <div class="title box">
+        <p class="data">2022-06-26 08:45</p>
+        <!-- <button id="update">Update</button> -->
+        <a href="#" class="update"
+          ><img src="images/update.png" alt="update"
         /></a>
+        <p class="title">PERSON ON DUTY</p>
+      </div>
+      <div class="person-duty box">
+        <p class="person-duty-name">Name</p>
+        <!-- <img class="person-duty-img" src="" alt="Person on duty picture" /> -->
+        <a href="#" class="phone"><img src="images/phone.png" alt="phone" /></a>
       </div>
 
       <!-- <div class="working-time">
@@ -49,12 +51,13 @@
         </div>
       </div> -->
 
-      <button id="logout">Logout</button>
+      <!-- <button id="logout">Logout</button> -->
+      <a href="#" id="logout"><img src="images/logout.png" alt="logout" /></a>
     </div>
     <div id="login" class="container is-hidden">
       <form>
-        <input type="tel" name="pass" />
-        <button type="submit">Login</button>
+        <input class="password" type="tel" name="pass" />
+        <button class="password-submit" type="submit">Login</button>
       </form>
     </div>
     <script src="./js/dzicrypto-1.0.2.js"></script>

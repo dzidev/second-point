@@ -7,9 +7,10 @@ const refs = {
   login: document.querySelector("#login"),
   form: document.querySelector("#login > form"),
   logout: document.querySelector("#logout"),
-  date: document.querySelector(".title__data"),
-  dutyName: document.querySelector(".person-duty-title"),
-  dutyPhone: document.querySelector(".person-phone"),
+  date: document.querySelector(".data"),
+  dutyName: document.querySelector(".person-duty-name"),
+  dutyPhone: document.querySelector(".phone"),
+  update: document.querySelector(".update"),
 };
 
 // console.log(refs);
@@ -97,3 +98,10 @@ const render = () => {
 };
 
 render();
+
+// refs.update.addEventListener("click", render);
+
+refs.update.addEventListener("click", (e) => {
+  e.preventDefault();
+  render();
+});
