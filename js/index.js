@@ -17,7 +17,7 @@ const refs = {
 
 const STORAGE_KEY = "second-point";
 const DEFAULT_STORE =
-  "F2ZFH5cXdwm+e7hqbjS/+GevKxavzyyQmh+ixRN/JS3b6K+dFYhf7Ku1VXkGOSjZcJKx+qgcNH5h5HpI1ck8mmMxrc3hBaGQvEE16we8Avf7tElc3hDoE9J/a4ysYr6GQZwOqdvY3AI+vCC5yFqGG8YoesEg14L8VXqvdly/fJEYOlTHzRBDUiz71CjOeOiwNckxUjCs2n3hc8NxNb2u9n83rE+rqzdfush92OSYSF0tKlTEg76m09ztU3NPjs4wLz+V3IVieKHvUeRUHCoYSMGOuCc6ziBYmOytvR4ea/HriESQ89krEf8=";
+  "F7Yp7TuHTHDNmmBeBOdloO0W8B3jz0SVHCtFro+6F5u35lVXV9czQQ5bWJJFeER3qupAuE1YY57xVK96bC+FXFxY5GGzCtpYp6UnjuX66WDgGe64WD1LYgnGh3ilbfHXmY/JpxBlAck1tLdrHdt4dj6WOj+7fXUtnaUo3ppc1UZ3/a+ReR1wVAvxfVfZJxXXocjLQwDV6l5CV05j+3N3eFymDRfYPoH/pGlvys4qpXMSMJMFhZudge4OeW4mb9pJLkveEaoZCxJ6EZB0lYt+BauFqQ2efLjhdio3Ov2Nn4pgLY5IJSbgzC4=";
 
 let store = storage.load(STORAGE_KEY);
 
