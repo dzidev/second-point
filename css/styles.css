@@ -37,7 +37,7 @@ html {
   margin: 0;
   padding: 0;
 }
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   body {
     width: 480px;
     background: url(../images/calendarmobile.png) no-repeat center;
@@ -54,8 +54,8 @@ html {
     width: 980;
     background: url(../images/calendardesctop.png) no-repeat center;
    }
-    
-  } 
+     
+  } */
 body {
   display: flex;
 /* background: url(../images/calendarmobile.png) no-repeat center; */
@@ -165,7 +165,7 @@ body {
     font-size: 70px;
   }
 }
-}
+
 .person-duty-name {
   margin: 10px auto 0px auto;
   font-size: 70px;

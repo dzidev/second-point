@@ -74,10 +74,11 @@ const getDateString = (date) => {
   // return date.toLocaleDateString("uk-UA", options);
   //return date.toLocaleDateString("en-US", options);
 
-  return `${DAYS_OF_WEEK[date.getDay()]} ${pad(date.getDate())}.${pad(
+  return `${DAYS_OF_WEEK[date.getDay()]}, ${pad(date.getDate())}.${pad(
     date.getMonth() + 1
-  )}.${date.getFullYear()} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
+  )}.${date.getFullYear()}`;
 };
+//  ${pad(date.getHours())}:${pad(date.getMinutes())}
 
 const render = () => {
   if (store) {
