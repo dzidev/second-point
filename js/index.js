@@ -37,6 +37,7 @@ refs.form.addEventListener("submit", (e) => {
 });
 
 refs.logout.addEventListener("click", (e) => {
+  e.preventDefault();
   store = undefined;
   storage.remove(STORAGE_KEY);
   render();
